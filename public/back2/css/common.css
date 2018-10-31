@@ -36,10 +36,11 @@ a:visited{
   left: 0;
   height: 100%;
   background-color: #222D32;
+  z-index: 1;
 }
 .lt_aside .brand{
   height: 50px;
-  background-color: #5B99CB;
+  background-color: #367FA9;
 }
 .lt_aside a{
   display: block;
@@ -85,4 +86,32 @@ a:visited{
 .lt_aside .nav .child a{
   padding-left: 19px;
   /* display: none; */
+}
+.lt_main{
+  padding-left: 180px;
+  padding-top: 50px;
+  height: 1000px;
+  background-color: #f99;
+}
+.lt_main .lt_topbar{
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #3C8DBC;
+  padding-left: 180px;
+}
+.lt_main .lt_topbar a{
+  color: #fff;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+
+.lt_content{
+  padding: 10px;
 }
