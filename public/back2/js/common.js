@@ -1,3 +1,7 @@
+
+
+
+
 // NProgress.start();
 // setTimeout(function(){
 //   NProgress.done();
@@ -26,3 +30,46 @@ $(document).ajaxStop(function(){
     
   },1000);
 });
+
+$(function(){
+  //1.切换二级导航
+  $(".nav .category").click(function(){
+    $(this).next().stop().slideToggle();
+  });
+  //2.左侧菜单栏切换
+  $('.lt_topbar .icon_menu').click(function(){
+    $('.lt_aside').toggleClass('hidemenu');
+    $('.lt_main').toggleClass('hidemenu');
+    $('.lt_main .lt_topbar').toggleClass('hidemenu');
+  });
+  //3.退出功能的实现
+  $('.lt_topbar .icon_logout').click(function(){
+    $('#logoutModal').modal('show');
+    $('#logoutModal').modal('hide');
+    
+  }) 
+
+
+    // 退出功能
+  // 退出登陆的方式:
+  // (1) 用户端(浏览器端), 用户自己清除浏览器缓存  (清空了 cookie),
+  //     本质上将会话标识 sessionId 也清除了
+  // (2) 前端通过发送ajax退出请求, 让后台销毁当前用户的登录状态
+  $('#logoutBtn').click(function(){
+    $.ajax({
+      type:"get",
+      dataType:"json",
+      url:"/employee/employeeLogout",
+      success:function(info){
+         console.log(info);
+         if(info.success){
+           location.href="login.html";
+         }
+      }
+    })
+   })
+
+
+});
+
+
