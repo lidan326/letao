@@ -150,4 +150,9 @@ a:visited{
   width: 48%;
   height: 400px;
   background-color: skyblue;
+} 
+
+
+.lt_main .lt_content .btn{
+  margin-bottom: 20px;
 }
